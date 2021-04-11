@@ -1,46 +1,86 @@
 @import '../../../../styles/_mixins';
 @import '../../../../styles/_variables';
 
-@for $i from 1 to 8 {
-    .card:nth-child($i) {
-        .icon{
-            background-color: rgba(random(255), random(255), random(255), 1);
+.card-product {
+    @include displayFlex($flexDirection: column, $alignItems: center, $justifyContent: space-between);
+    cursor: pointer;
+    height: 320px;
+    max-width: 240px;
+    border: solid 1px rgba(black, .3);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 4px rgba(black, .6);
+    transition: box-shadow .1s ease-out;
+    position: relative;
+    
+    &:hover{
+        box-shadow: 0 0 12px rgba(black, .9);
+        transition: box-shadow .1s ease-out;
+    }
+    
+    .image{        
+        margin: 0 auto;
+        width: 100%;
+        border-bottom: solid 1px rgba(black, .3);
+        overflow: hidden;
+        
+        img{
+            border-radius: 6px 6px 0 0;
+            width: 100%;
         }
     }
-}
 
-.card {
-    @include displayFlex($flexDirection: column, $alignItems: center, $justifyContent: center);
-    cursor: pointer;
+    .values{
+        @include displayFlex();
 
-    &:hover{
-        .icon{
-            transform: scale(1.1);
-            transition: transform .1s ease-out;
-        }
-        .label{
+        .price{
+            font-weight: 700;
             color: $blue-color;
+            margin: 16px;
+            font-size: 1.5em;
+        }
+    }
+
+    .description{
+        @include displayFlex($flex: auto, $alignItems: flex-start, $justifyContent: center, $flexDirection: column);  
+        align-self: flex-start;
+        margin: 0 8px;
+
+        h3{
+            font-weight: 600;
+            margin: 0;
+            color: $blue-color;
+        }
+
+        p{
+            margin: 0 auto;
+            color: rgba(black, .6);
         }
     }
     
-    .icon{
-        @include displayFlex($flex: auto, $alignItems: center, $justifyContent: center);    
-
-        height: 50px;
-        width: 50px;
+    .discount-wrap{
+        @include displayFlex($justifyContent: center, $alignItems: center);
+        background-color: red;
+        box-shadow: 0 0 0 1px red;
         border-radius: 50%;
-        margin: 5px auto;
-        color: white;
-        background-color: $blue-color;
-        
-        transition: transform .1s ease-out;
-    }
+        border: solid 1px white;
+        width: 2.8em;
+        height: 2.8em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(15deg);
 
-    .label{
-        font-weight: 600;
+        .discount{
+            display: none;
+            margin: 0;
+            color: white;
+            line-height: 1em;
 
-        p{
-            margin: 5px;
+            &.has-discount{
+                display: initial;
+            }
         }
     }
+
 }

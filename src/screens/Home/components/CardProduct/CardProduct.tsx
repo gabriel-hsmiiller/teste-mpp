@@ -1,10 +1,13 @@
 import React, { Requireable } from 'react';
 import PropTypes from 'prop-types';
-import './CardProductStyle.scss';
 import { Icon } from '@material-ui/core/';
 
+import { Product } from '../../../../data/products';
+
+import './CardProductStyle.scss';
+
 interface ICardProductProps {
-    content: { image: string, price: string, discount?: string, description: string };
+    content: Product;
 }
 
 interface ICardProductState {}
@@ -13,16 +16,28 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
     static propTypes: {
         content: Requireable<any>,
     };
+
+    currency = (n: number) => 'R$ ' + n.toFixed(2).replace('.',',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
     
     render() {
         const { content } = this.props;
 
         return (
-            <div className="card">
+            <div className="card-product">
                 <div className="image"><img src={content.image} /></div>
-                <div className="label"><p>{ content.price }</p></div>
-                <div className="label"><p>{ content.discount }</p></div>
-                <div className="label"><p>{ content.description }</p></div>
+                <div className="description">
+                    <h3>{ content.title }</h3>
+                    <p>{ content.description }</p>
+                </div>
+                <div className="values">
+                    <p className="price">{ this.currency(content.price) }</p>
+                </div>
+                <div className="discount-wrap">
+                    <p className={
+                        ['discount', content.discount ? 'has-discount' : '' ]
+                        .join(' ')
+                    }>-{ content.discount }%</p>
+                </div>
             </div>
         );
     } 
@@ -31,8 +46,9 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
 CardProduct.propTypes = {
     content: PropTypes.exact({ 
         image: PropTypes.string, 
-        price: PropTypes.string,
-        discount: PropTypes.string,
+        price: PropTypes.number,
+        discount: PropTypes.number,
         description: PropTypes.string,
+        title: PropTypes.string,
     }),
 }

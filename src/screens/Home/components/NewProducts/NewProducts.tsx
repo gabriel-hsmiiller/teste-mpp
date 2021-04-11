@@ -1,11 +1,14 @@
 import React, { Requireable } from 'react';
 import PropTypes from 'prop-types';
-import './NewProductsStyle.scss';
 import { Icon } from '@material-ui/core/';
+
 import CardProduct from '../CardProduct/CardProduct';
+import { Product } from '../../../../data/products';
+
+import './NewProductsStyle.scss';
 
 interface INewProductsProps {
-    products: { image: string, price: string, discount: string, description: string }[]
+    products: Product[]
 }
 
 interface INewProductsState {}
@@ -38,8 +41,8 @@ NewProducts.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.exact({
             image: PropTypes.string,
-            price: PropTypes.string,
-            discount: PropTypes.string,
+            price: PropTypes.number,
+            discount: PropTypes.number,
             description: PropTypes.string,
         })
     )

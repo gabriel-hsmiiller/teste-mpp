@@ -1,13 +1,16 @@
 import React from 'react';
 
-import Categories from '../../data/categories';
-import Carousel from '../../data/promo-carousel';
-import CardCategory from './components/CardCategory/CardCategory';
-import CommonCategories from './components/CommonCategories/CommonCategories';
-import DayOffers from './components/DayOffers/DayOffers';
-import NewProducts from './components/NewProducts/NewProducts';
-import OfferProduct from './components/OfferProduct/OfferProduct';
-import PromotionsCarousel from './components/PromotionsCarousel/PromotionsCarousel';
+import { Categories, CommonCategories } from '../../data/categories';
+import { DayOffers } from '../../data/products';
+import { Carousel } from '../../data/promo-carousel';
+
+import CardCategoryComponent from './components/CardCategory/CardCategory';
+import CommonCategoriesComponent from './components/CommonCategories/CommonCategories';
+import DayOffersComponent from './components/DayOffers/DayOffers';
+import NewProductsComponent from './components/NewProducts/NewProducts';
+import OfferProductComponent from './components/OfferProduct/OfferProduct';
+import PromotionsCarouselComponent from './components/PromotionsCarousel/PromotionsCarousel';
+
 import './HomeStyle.scss';
 
 interface IHomeProps {
@@ -24,14 +27,14 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <div className="home">
                 <div className="categories">
                     { Categories.map(
-                        (category, index) => <CardCategory content={category} key={index} />
+                        (category, index) => <CardCategoryComponent content={category} key={index} />
                     )}
                 </div>
-                <PromotionsCarousel promotions={Carousel} />
-                <DayOffers offers={[]} />
-                <NewProducts products={[]} />
-                <CommonCategories categories={[]} />
-                <OfferProduct />
+                <PromotionsCarouselComponent promotions={Carousel} />
+                <DayOffersComponent offers={ DayOffers } />
+                <NewProductsComponent products={[]} />
+                <CommonCategoriesComponent categories={CommonCategories} />
+                <OfferProductComponent />
             </div>
         );
     } 

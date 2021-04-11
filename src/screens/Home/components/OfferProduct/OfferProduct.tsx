@@ -1,7 +1,8 @@
 import React, { Requireable } from 'react';
 import PropTypes from 'prop-types';
-import './OfferProductStyle.scss';
 import { Icon } from '@material-ui/core/';
+
+import './OfferProductStyle.scss';
 
 interface IOfferProductProps {
 }

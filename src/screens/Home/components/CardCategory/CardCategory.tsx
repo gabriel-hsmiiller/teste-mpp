@@ -1,7 +1,8 @@
 import React, { Requireable } from 'react';
 import PropTypes from 'prop-types';
-import './CardCategoryStyle.scss';
 import { Icon } from '@material-ui/core/';
+
+import './CardCategoryStyle.scss';
 
 interface ICardCategoryProps {
     content: { label: string, icon: string };
@@ -18,7 +19,7 @@ export default class CardCategory extends React.Component<ICardCategoryProps, IC
         const { content } = this.props;
 
         return (
-            <div className="card">
+            <div className="card-category">
                 <div className="icon"><Icon style={{ fontSize: 32 }}>{ content.icon }</Icon></div>
                 <div className="label"><p>{ content.label }</p></div>
             </div>

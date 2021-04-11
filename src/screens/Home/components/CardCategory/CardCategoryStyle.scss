@@ -2,14 +2,14 @@
 @import '../../../../styles/_variables';
 
 @for $i from 1 to 8 {
-    .card:nth-child($i) {
+    .card-category:nth-child($i) {
         .icon{
             background-color: rgba(random(255), random(255), random(255), 1);
         }
     }
 }
 
-.card {
+.card-category {
     @include displayFlex($flexDirection: column, $alignItems: center, $justifyContent: center);
     cursor: pointer;
 
