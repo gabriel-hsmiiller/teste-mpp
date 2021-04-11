@@ -1,0 +1,47 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+@mixin headerGeneric() {
+    @include displayFlex($justifyContent: space-between, $alignItems: center);
+    background-color: $blue-color;
+    color: white;
+}
+
+.mHeader {
+    height: 60px;
+    @include headerGeneric();
+}
+
+.header {
+    height: 100px;
+    @include headerGeneric();
+}
+
+.header, .mHeader {
+    .logo{
+        @include displayFlex($justifyContent: center, $alignItems: center);
+
+        span{
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-top: 10px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+
+    .search{
+        @include displayFlex($flex: 2, $justifyContent: center, $alignItems: center);
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: calc(1em + 24px);
+        }
+    }
+
+    .profile{
+        @include displayFlex($justifyContent: space-around, $alignItems: center);
+    }
+}

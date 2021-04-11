@@ -1,0 +1,15 @@
+@import '../../../../styles/_mixins';
+@import '../../../../styles/_variables';
+
+.carousel{
+    @include displayFlex();
+    width: 100%;
+
+    .promotion{
+        width: 100%;
+
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.home{
+    .categories {
+        width: 100%;
+        margin: 10px auto;
+        @include displayFlex($justifyContent: space-around, $alignItems: center);
+    }
+}
