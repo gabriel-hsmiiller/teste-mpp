@@ -64,7 +64,7 @@ export default class CardsCarousel<T> extends React.Component<ICardsCarouselProp
         const { carouselPage } = this.state;
         const { cards } = this.props;
 
-        const maxRight = Math.floor(cards.length / 4);
+        const maxRight = Math.floor((cards.length - 1) / 4);
 
         if(direction === 'left' && carouselPage === 0){
             return 'disable';
