@@ -1,46 +1,53 @@
 @import '../../../../styles/_mixins';
 @import '../../../../styles/_variables';
 
-@for $i from 1 to 8 {
-    .card:nth-child($i) {
-        .icon{
-            background-color: rgba(random(255), random(255), random(255), 1);
-        }
-    }
-}
-
-.card {
-    @include displayFlex($flexDirection: column, $alignItems: center, $justifyContent: center);
-    cursor: pointer;
-
-    &:hover{
-        .icon{
-            transform: scale(1.1);
-            transition: transform .1s ease-out;
-        }
-        .label{
-            color: $blue-color;
-        }
-    }
+.offer-product{
+    @include displayFlex($flexDirection: column);
+    width: 100%;
+    background-color: $blue-color;
     
-    .icon{
-        @include displayFlex($flex: auto, $alignItems: center, $justifyContent: center);    
-
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        margin: 5px auto;
+    .title{
+        @include displayFlex($flexDirection: column, $justifyContent: center, $alignItems: center);
+        width: 100%;
         color: white;
-        background-color: $blue-color;
-        
-        transition: transform .1s ease-out;
-    }
 
-    .label{
-        font-weight: 600;
+        h2{
+            font-size: 2.2em;
+            font-weight: 700;
+            margin: 40px auto 5px auto;
+        }
 
         p{
-            margin: 5px;
+            margin: 5px auto 25px auto;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+    }
+
+    .content{
+        @include displayFlex($alignItems: center, $justifyContent: center);
+        width: 100%;
+        position: relative;
+
+        button{
+            margin: 5px auto 20px auto;
+            font-size: 1.2em;
+            padding: .8em 1.6em;
+            outline: none;
+            border: none;
+            border-radius: 2.8em;
+            color: white;
+            background-color: $purple-color;
+            cursor: pointer;
+            transition: background .15s ease-out;
+
+            &:hover{
+                background-color: lighten($purple-color, 5);
+            }
+            
+            &:active{
+                background-color: darken($purple-color, 5);
+            }
         }
     }
 }

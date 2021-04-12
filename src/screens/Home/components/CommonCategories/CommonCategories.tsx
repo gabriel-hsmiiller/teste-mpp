@@ -22,9 +22,14 @@ export default class CommonCategories extends React.Component<ICommonCategoriesP
 
         return (
             <div className="common-categories">
-                { categories.map(
-                    (category, index) => <CardCategory content={category} key={index} />
-                )}
+                <div className="title">
+                    <h2>Categorias Frequentes</h2>
+                </div>
+                <div className="content">
+                    { categories.map(
+                        (category, index) => <CardCategory content={category} key={index} />
+                    )}
+                </div>
             </div>
         );
     } 

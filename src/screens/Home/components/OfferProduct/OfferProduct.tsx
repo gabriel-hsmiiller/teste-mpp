@@ -15,12 +15,12 @@ export default class OfferProduct extends React.Component<IOfferProductProps, IO
     
     render() {
         return (
-            <div className="card">
-                <div>
-                    <p>Tá vendendo algo?</p>
+            <div className="offer-product">
+                <div className="title">
+                    <h2>Tá vendendo algo?</h2>
                     <p>Anuncie seu produto na plataforma e ganhe pontos e descontos exclusivos! É rápido e gratuito!</p>
                 </div>
-                <div>
+                <div className="content">
                     <button>Anuncie já</button>
                 </div>
             </div>
