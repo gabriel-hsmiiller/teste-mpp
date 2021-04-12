@@ -17,6 +17,14 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
     };
 
     currency = (n: number) => 'R$ ' + n.toFixed(2).replace('.',',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+
+    maxTextTitle = (s: string) => {
+        return s.slice(0,18).length < s.length ? s.slice(0,18).concat('...') : s;
+    }
+
+    maxTextDescription = (s: string) => {
+        return s.slice(0,50).length < s.length ? s.slice(0,50).concat('...') : s;
+    }
     
     render() {
         const { content } = this.props;
@@ -25,8 +33,8 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
             <div className="card-product">
                 <div className="image"><img src={content.image} /></div>
                 <div className="description">
-                    <h3>{ content.title }</h3>
-                    <p>{ content.description }</p>
+                    <h3>{ this.maxTextTitle(content.title) }</h3>
+                    <p>{ this.maxTextDescription(content.description) }</p>
                 </div>
                 <div className="values">
                     <p className="price">{ this.currency(content.price) }</p>
