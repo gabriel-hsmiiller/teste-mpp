@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Categories, CommonCategories } from '../../data/categories';
-import { DayOffers } from '../../data/products';
+import { DayOffers, NewProducts } from '../../data/products';
 import { Carousel } from '../../data/promo-carousel';
 
 import CardCategoryComponent from './components/CardCategory/CardCategory';
@@ -30,10 +30,13 @@ class Home extends React.Component<IHomeProps, IHomeState> {
                         (category, index) => <CardCategoryComponent content={category} key={index} />
                     )}
                 </div>
-                <PromotionsCarouselComponent promotions={Carousel} />
+                <PromotionsCarouselComponent promotions={ Carousel } />
+                <hr className="divide" />
                 <DayOffersComponent offers={ DayOffers } />
-                <NewProductsComponent products={[]} />
-                <CommonCategoriesComponent categories={CommonCategories} />
+                <hr className="divide" />
+                <NewProductsComponent products={ NewProducts } />
+                <hr className="divide" />
+                <CommonCategoriesComponent categories={ CommonCategories } />
                 <OfferProductComponent />
             </div>
         );

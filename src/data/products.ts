@@ -19,5 +19,5 @@ export const DayOffers: Product[] = [
 ]
 
 export const NewProducts: Product[] = [
-    {  title: 'Gatinho', description: 'Gato fofo', image: 'https://http.cat/100', price: 500 }
+    {  title: 'Gatinho', description: 'Gato fofo', image: 'https://http.cat/300', price: 500 }
 ]

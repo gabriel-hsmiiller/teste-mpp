@@ -1,6 +1,5 @@
 import React, { Requireable } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '@material-ui/core/';
 
 import { Product } from '../../../../data/products';
 
@@ -32,11 +31,8 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
                 <div className="values">
                     <p className="price">{ this.currency(content.price) }</p>
                 </div>
-                <div className="discount-wrap">
-                    <p className={
-                        ['discount', content.discount ? 'has-discount' : '' ]
-                        .join(' ')
-                    }>-{ content.discount }%</p>
+                <div className={['discount-wrap', !!content.discount ? 'has-discount' : null ].join(' ')}>
+                    <p className='discount'>-{ content.discount }%</p>
                 </div>
             </div>
         );

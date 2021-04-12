@@ -12,10 +12,10 @@
     box-shadow: 0 0 4px rgba(black, .6);
     transition: box-shadow .1s ease-out;
     position: relative;
+    animation: visibility .2s;
     
     &:hover{
         box-shadow: 0 0 12px rgba(black, .9);
-        transition: box-shadow .1s ease-out;
     }
     
     .image{        
@@ -70,16 +70,16 @@
         top: 0;
         right: 0;
         transform: rotate(15deg);
+        display: none;
+
+        &.has-discount{
+            display: flex;
+        }
 
         .discount{
-            display: none;
             margin: 0;
             color: white;
             line-height: 1em;
-
-            &.has-discount{
-                display: initial;
-            }
         }
     }
 

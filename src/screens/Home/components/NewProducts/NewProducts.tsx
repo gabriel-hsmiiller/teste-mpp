@@ -6,6 +6,7 @@ import CardProduct from '../CardProduct/CardProduct';
 import { Product } from '../../../../data/products';
 
 import './NewProductsStyle.scss';
+import CardsCarousel from '../../../../components/CardsCarousel/CardsCarousel';
 
 interface INewProductsProps {
     products: Product[]
@@ -23,14 +24,12 @@ export default class NewProducts extends React.Component<INewProductsProps, INew
 
         return (
             <div className="new-products">
-                <div>
-                    <p>Produtos recentes</p>
+                <div className="title">
+                    <h2>Produtos recentes</h2>
                     <p>Confira os últimos produtos adicionados à plataforma</p>
                 </div>
-                <div>
-                    { products.map(
-                        (product, index) => <CardProduct content={product} key={index} />
-                    )}
+                <div className="content">
+                    <CardsCarousel<Product> cards={products} Element={CardProduct} />
                 </div>
             </div>
         );
@@ -44,6 +43,7 @@ NewProducts.propTypes = {
             price: PropTypes.number,
             discount: PropTypes.number,
             description: PropTypes.string,
+            title: PropTypes.string,
         })
     )
 }

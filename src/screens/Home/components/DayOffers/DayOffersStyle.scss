@@ -1,24 +1,6 @@
 @import '../../../../styles/_mixins';
 @import '../../../../styles/_variables';
 
-@keyframes controlRotateRight {
-    0% { transform: translateX(0); };
-    10% { transform: translateX(10px); };
-    49% { transform: translateX(50px); };
-    51% { transform: translateX(-50px); };
-    90% { transform: translateX(-10px); };
-    100% { transform: translateX(0); };
-}
-
-@keyframes controlRotateLeft {
-    0% { transform: translateX(0); };
-    10% { transform: translateX(-10px); };
-    49% { transform: translateX(-50px); };
-    51% { transform: translateX(50px); };
-    90% { transform: translateX(10px); };
-    100% { transform: translateX(0); };
-}
-
 .day-offers{
     @include displayFlex($flexDirection: column);
     width: 100%;
@@ -44,56 +26,5 @@
     .content{
         width: 100%;
         position: relative;
-
-        .controls{
-            position: absolute;
-            overflow: hidden;
-            z-index: 10;
-            width: 3em;
-            height: 3em;
-            background-color: $blue-color;
-            color: white;
-            top: 50%;
-            cursor: pointer;
-
-            background-position: center;
-            transition: background .8s;
-
-            &:active{
-                background-color: lighten($blue-color, 10);
-                background-size: 100%;
-                transition: background 0s;
-            }
-
-            &:hover{
-                background: $blue-color radial-gradient(circle, transparent 1%, $blue-color 1%) center/15000%;
-            }
-
-            &.left{
-                left: 10px;
-
-                &:hover{
-                    span{
-                        animation: controlRotateLeft .4s linear;
-                    }
-                }
-            }
-
-            &.right{
-                right: 10px;
-
-                &:hover{
-                    span{
-                        animation: controlRotateRight .4s linear;
-                    }
-                }
-            }
-        }
-
-        .offers{
-            @include displayFlex($flexDirection: row, $alignItems: center, $justifyContent: space-around);
-            width: 80%;
-            margin: 0 auto;
-        }
     }
 }

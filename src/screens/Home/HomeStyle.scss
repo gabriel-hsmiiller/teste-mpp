@@ -7,4 +7,13 @@
         margin: 10px auto;
         @include displayFlex($justifyContent: space-around, $alignItems: center);
     }
+
+    .divide{
+        width: 70%;
+        border: none;
+        border-radius: 1px;
+        margin: 40px auto;
+        background-color: $blue-color;
+        height: 2px;
+    }
 }
