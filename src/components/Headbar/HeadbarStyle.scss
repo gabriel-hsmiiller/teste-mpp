@@ -2,23 +2,19 @@
 @import '../../styles/_variables';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 
-@mixin headerGeneric() {
-    @include displayFlex($justifyContent: space-between, $alignItems: center);
-    background-color: $blue-color;
-    color: white;
-}
-
 .mHeader {
     height: 60px;
-    @include headerGeneric();
 }
 
 .header {
     height: 100px;
-    @include headerGeneric();
 }
 
 .header, .mHeader {
+    @include displayFlex($justifyContent: space-between, $alignItems: center);
+    background-color: $blue-color;
+    color: white;
+
     .logo{
         @include displayFlex($justifyContent: center, $alignItems: center);
 
@@ -42,6 +38,6 @@
     }
 
     .profile{
-        @include displayFlex($justifyContent: space-around, $alignItems: center);
+        @include displayFlex($justifyContent: center, $alignItems: center);
     }
 }

@@ -1,0 +1,49 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.footer {
+    @include displayFlex($flexDirection: column, $justifyContent: space-between, $alignItems: stretch);
+    background-color: white;
+    color: $blue-color;
+    height: 200px;
+    
+    .topbar{
+        @include displayFlex($justifyContent: space-around, $alignItems: center);
+        width: 80%;
+        margin: 20px auto;
+
+        .logo{
+            @include displayFlex($alignItems: flex-end);
+        }
+    
+        .social{
+            @include displayFlex($justifyContent: center, $alignItems: baseline);
+
+            span{
+                margin: 0 16px;
+                cursor: pointer;
+            }
+        }
+        
+        .links{
+            @include displayFlex($flex: 2, $justifyContent: space-around, $alignItems: baseline);
+            
+            .column{
+                @include displayFlex($flexDirection: column, $justifyContent: space-around, $alignItems: flex-end);
+                color: $blue-color;
+                font-weight: 600;
+    
+                p{
+                    cursor: pointer;
+                    margin: .2em;
+                }
+            }
+        }
+    }
+
+    .disclaimer{
+        @include displayFlex($justifyContent: space-around, $alignItems: center);
+        font-size: .8em;
+        font-weight: 700;
+    }
+}

@@ -31,9 +31,9 @@ class Headbar extends React.Component<IHeadbarProps, IHeadbarState> {
                         <input type="text" placeholder="Pesquisar" />
                     </div>
                     <div className="profile">
-                        <div className="">Anuncie</div>
-                        <div className=""><Icon>person</Icon></div>
-                        <div className=""><Icon>shopping_cart</Icon></div>
+                        <div className=""><Icon style={{ fontSize: 32, margin: '0 16px' }}>campaign</Icon></div>
+                        <div className=""><Icon style={{ fontSize: 32, margin: '0 16px' }}>person</Icon></div>
+                        <div className=""><Icon style={{ fontSize: 32, margin: '0 16px' }}>shopping_cart</Icon></div>
                     </div>
                 </div>
             );

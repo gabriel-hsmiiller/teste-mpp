@@ -1,3 +1,11 @@
+------------------------------------------------------------------------------------------------------------
+
+**_Author's note:_**
+
+This project is being developed in a low-performance machine, this is why it stills in early-phase development. It will grow bigger slow until the author gets a computer that is not a toaster. Thank you and enjoy the code <3
+
+------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
