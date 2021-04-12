@@ -31,7 +31,7 @@ export default class CardProduct extends React.Component<ICardProductProps, ICar
 
         return (
             <div className="card-product">
-                <div className="image"><img src={content.image} /></div>
+                <div className="image"><img src={content.image} alt="Product" /></div>
                 <div className="description">
                     <h3>{ this.maxTextTitle(content.title) }</h3>
                     <p>{ this.maxTextDescription(content.description) }</p>

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, Switch, MemoryRouter } from 'react-router';
 import Footer from '../components/Footer/Footer';
 import Headbar from '../components/Headbar/Headbar';
